@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom.scss
+// Including all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+.cell-value-container {
+  @extend .float-start;
+  @extend .col-8;
+  @extend .border;
+  @extend .rounded;
+  @extend .border-danger;
+}
+
+.guess-container-left {
+  @extend .float-start;
+  @extend .col-2;
+  @extend .border;
+  @extend .rounded;
+  @extend .border-danger;
+}
+
+.guess-container-right {
+  @extend .float-start;
+  @extend .col-2;
+  @extend .border;
+  @extend .rounded;
+  @extend .border-danger;
+}
+
+.guess {
+  @extend .row;
+  @extend .justify-content-center;
+  font-size: .8rem;
+  min-width: 2rem;
+}
+
+.cell {
+  @extend .border;
+  @extend .rounded;
+  @extend .border-success;
+  max-width: 7rem;
+}
+
+.cell-coordinates {
+  @extend .row;
+  @extend .justify-content-center;
+  font-size: .7rem;
+}
+
+.cell-value {
+  @extend .row;
+  @extend .justify-content-center;
+  font-size: 3rem;
+  min-width: 2.4rem;
+}
+
+.game-row {
+  @extend .row;
+  @extend .g-0;
+  @extend .p-1;
+  @extend .border;
+  @extend .border-primary;
+  @extend .rounded;
+
+  min-width: calc(4.2rem * 9);
+  max-width: calc(7.1rem * 9);
+}
+
+.game-board {
+  @extend .border;
+  @extend .border-danger;
+  @extend .rounded;
+  @extend .p-1;
+}
