@@ -20,14 +20,10 @@ export class UtilsService {
         this.renderer.removeClass(node, 'border');
         this.renderer.addClass(node, 'border-danger');
         this.renderer.addClass(node, 'rounded');
-        console.log('no border');
-        console.log('after', node.classList.value);
       } else {
         this.renderer.addClass(node, 'border');
         this.renderer.addClass(node, 'border-danger');
         this.renderer.addClass(node, 'rounded');
-        console.log('border');
-        console.log('after', node.classList.value);
       }
     });
   }
