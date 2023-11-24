@@ -1,11 +1,15 @@
-// Custom.scss
 // Including all of Bootstrap
-
 // Include any default variable overrides here (though functions won't be available)
-
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+//@media screen and (max-width: 375px) {
+//}
+html {
+  font-size: 1vw;
+}
+
+
 .cell-value-container {
   @extend .float-start;
   @extend .col-8;
@@ -23,11 +27,14 @@
 }
 
 .guess-container-right {
-  @extend .float-start;
+  @extend .float-end;
   @extend .col-2;
   @extend .border;
   @extend .rounded;
   @extend .border-danger;
+
+  // This "centers"
+  transform: translateY(12%);
 }
 
 .guess {
@@ -59,14 +66,15 @@
 
 .game-row {
   @extend .row;
+  @extend .flex-nowrap;
   @extend .g-0;
   @extend .p-1;
   @extend .border;
   @extend .border-primary;
   @extend .rounded;
+  @extend .justify-content-center;
 
-  min-width: calc(4.2rem * 9);
-  max-width: calc(7.1rem * 9);
+  min-width: calc(7.1rem * 9);
 }
 
 .game-board {
@@ -74,4 +82,15 @@
   @extend .border-danger;
   @extend .rounded;
   @extend .p-1;
+  @extend .col-8;
+
+  min-width: calc(7.2rem * 9);
+}
+
+.game-menu {
+  @extend .border;
+  @extend .border-danger;
+  @extend .rounded;
+  @extend .p-1;
+  @extend .col-4;
 }
