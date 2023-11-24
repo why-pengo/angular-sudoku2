@@ -21,17 +21,11 @@ html {
 .guess-container-left {
   @extend .float-start;
   @extend .col-2;
-  @extend .border;
-  @extend .rounded;
-  @extend .border-danger;
 }
 
 .guess-container-right {
   @extend .float-end;
   @extend .col-2;
-  @extend .border;
-  @extend .rounded;
-  @extend .border-danger;
 
   // This "centers"
   transform: translateY(12%);
