@@ -11,7 +11,15 @@ import { UtilsService } from '../services/utils.service';
 export class CellDemoComponent {
   private utils = inject(UtilsService);
 
-  toggleVis(event: Event, selector: string) {
+  toggleBorder(event: Event, selector: string) {
     this.utils.toggleBorderBySelector(event, selector);
+  }
+
+  toggleVisibility(event: Event, selector: string) {
+    this.utils.toggleVisibilityBySelector(event, selector);
+  }
+
+  toggleVisibilityOfGrids() {
+    this.utils.toggleVisibilityOfGrids();
   }
 }

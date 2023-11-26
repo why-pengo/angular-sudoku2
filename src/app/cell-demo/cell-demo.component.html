@@ -1,24 +1,43 @@
 <ul class="list-group">
   <li class="list-group-item border-0">
-    <button (click)="toggleVis($event, '.guess-container-left')" class="btn btn-primary" type="button">Toggle Left Guess
-      Border
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleVis($event, '.guess-container-right')" class="btn btn-primary" type="button">Toggle Right
+    <button (click)="toggleBorder($event, '.guess-container-left')" class="btn btn-primary" type="button">Toggle Left
       Guess
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleVis($event, '.cell-value-container')" class="btn btn-primary" type="button">Toggle Cell Value
+    <button (click)="toggleBorder($event, '.guess-container-right')" class="btn btn-primary" type="button">Toggle Right
+      Guess
+      Border
+    </button>
+  </li>
+  <li class="list-group-item border-0">
+    <button (click)="toggleBorder($event, '.cell-value-container')" class="btn btn-primary" type="button">Toggle Cell
+      Value
       Container
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleVis($event, '.game-row')" class="btn btn-primary" type="button">Toggle Game Row
+    <button (click)="toggleBorder($event, '.game-row')" class="btn btn-primary" type="button">Toggle Game Row
       Border
+    </button>
+  </li>
+  <li class="list-group-item border-0">
+    <button (click)="toggleVisibility($event, '.cell-coordinates')" class="btn btn-primary" type="button">Toggle
+      Cell
+      Coordinates
+    </button>
+  </li>
+  <li class="list-group-item border-0">
+    <button (click)="toggleVisibilityOfGrids()" class="btn btn-primary" type="button">Toggle
+      Grid
+      Visibility
+    </button>
+  </li>
+  <li class="list-group-item border-0">
+    <button (click)="toggleVisibility($event, '.guess')" class="btn btn-primary" type="button">Toggle
+      Guesses
     </button>
   </li>
 </ul>

@@ -6,7 +6,17 @@
 //@media screen and (max-width: 375px) {
 //}
 html {
-  font-size: 1vw;
+  @media (max-width: 4000px) {
+    font-size: 1.25vw;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5vw;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 2vw;
+  }
 }
 
 
@@ -59,10 +69,15 @@ html {
   @extend .row;
   @extend .flex-nowrap;
   @extend .g-0;
-  @extend .p-1;
+  //@extend .p-1;
   @extend .justify-content-center;
 
   min-width: calc(5.1rem * 9);
+}
+
+#game-screen {
+  @extend .container-fluid;
+  @extend .justify-content-center;
 }
 
 .game-board {
@@ -70,7 +85,7 @@ html {
   @extend .border-danger;
   @extend .rounded;
   @extend .p-1;
-  @extend .col-6;
+  @extend .col-8;
 
   min-width: calc(5.2rem * 9);
 }
@@ -80,5 +95,5 @@ html {
   @extend .border-danger;
   @extend .rounded;
   @extend .p-1;
-  @extend .col-6;
+  @extend .col-4;
 }
