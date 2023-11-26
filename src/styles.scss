@@ -41,8 +41,7 @@ html {
 .guess {
   @extend .row;
   @extend .justify-content-center;
-  font-size: .8rem;
-  min-width: 2rem;
+  font-size: .7rem;
 }
 
 .cell {
@@ -55,14 +54,14 @@ html {
 .cell-coordinates {
   @extend .row;
   @extend .justify-content-center;
-  font-size: .7rem;
+  font-size: .6rem;
 }
 
 .cell-value {
   @extend .row;
   @extend .justify-content-center;
-  font-size: 3rem;
-  min-width: 2.4rem;
+  font-size: 2.5rem;
+  transform: translateY(-5%);
 }
 
 .game-row {

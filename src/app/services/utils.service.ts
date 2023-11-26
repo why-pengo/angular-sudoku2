@@ -43,7 +43,7 @@ export class UtilsService {
     });
   }
 
-  toggleVisibilityOfGrids(): void {
+  toggleVisibilityOfGrids(on?: boolean): void {
     const oddGrids = [
       ...this.gameStateService.grid1,
       ...this.gameStateService.grid3,
@@ -53,10 +53,21 @@ export class UtilsService {
     ];
     oddGrids.forEach((id) => {
       const cellById = document.getElementById(id);
-      if (cellById && cellById.classList.contains('bg-dark')) {
+      console.log('on', on);
+      console.log('id', id);
+      console.log('cellById', cellById);
+      if (cellById !== null && on) {
+        console.log('on:true cellById', cellById);
+        this.renderer.addClass(cellById, 'bg-dark');
+        this.renderer.addClass(cellById, 'text-white');
+        return;
+      }
+      if (cellById !== null && cellById.classList.contains('bg-dark')) {
+        console.log('cellById', cellById);
         this.renderer.removeClass(cellById, 'bg-dark');
         this.renderer.removeClass(cellById, 'text-white');
       } else {
+        console.log('cellById', cellById);
         this.renderer.addClass(cellById, 'bg-dark');
         this.renderer.addClass(cellById, 'text-white');
       }
