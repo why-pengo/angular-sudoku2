@@ -85,7 +85,7 @@ html {
   @extend .border-danger;
   @extend .rounded;
   @extend .p-1;
-  @extend .col-8;
+  @extend .col;
 
   min-width: calc(5.2rem * 9);
 }
@@ -95,5 +95,5 @@ html {
   @extend .border-danger;
   @extend .rounded;
   @extend .p-1;
-  @extend .col-4;
+  @extend .col;
 }
