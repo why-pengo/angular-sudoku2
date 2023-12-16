@@ -1,43 +1,50 @@
 <ul class="list-group">
   <li class="list-group-item border-0">
-    <button (click)="toggleBorder($event, '.guess-container-left')" class="btn btn-primary" type="button">Toggle Left
+    <button (click)="toggleBorder('.guess-container-left')" class="btn btn-primary" type="button">Toggle Left
       Guess
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleBorder($event, '.guess-container-right')" class="btn btn-primary" type="button">Toggle Right
+    <button (click)="toggleBorder('.guess-container-right')" class="btn btn-primary" type="button">Toggle Right
       Guess
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleBorder($event, '.cell-value-container')" class="btn btn-primary" type="button">Toggle Cell
+    <button (click)="toggleBorder('.cell-value-container')" class="btn btn-primary" type="button">Toggle Cell
       Value
       Container
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleBorder($event, '.game-row')" class="btn btn-primary" type="button">Toggle Game Row
+    <button (click)="toggleBorder('.game-row')" class="btn btn-primary" type="button">Toggle Game Row
       Border
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleVisibility($event, '.cell-coordinates')" class="btn btn-primary" type="button">Toggle
+    <button (click)="toggleVisibility('.cell-coordinates')" class="btn btn-primary" type="button">Toggle
       Cell
       Coordinates
     </button>
   </li>
   <li class="list-group-item border-0">
     <button (click)="toggleVisibilityOfGrids()" class="btn btn-primary" type="button">Toggle
+      Checked
       Grid
       Visibility
     </button>
   </li>
   <li class="list-group-item border-0">
-    <button (click)="toggleVisibility($event, '.guess')" class="btn btn-primary" type="button">Toggle
+    <button (click)="toggleVisibility('.guess')" class="btn btn-primary" type="button">Toggle
       Guesses
+      Visibility
+    </button>
+  </li>
+  <li class="list-group-item border-0">
+    <button (click)="toggleGuess(6, 'A3')" class="btn btn-primary" type="button">Toggle
+      1
     </button>
   </li>
 </ul>

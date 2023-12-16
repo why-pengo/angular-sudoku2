@@ -18,6 +18,6 @@ export class BoardComponent implements AfterViewChecked {
   private utils = inject(UtilsService);
 
   ngAfterViewChecked(): void {
-    this.utils.toggleVisibilityOfGrids(true);
+    // this.utils.toggleVisibilityOfGrids();
   }
 }

@@ -13,9 +13,7 @@ export class UtilsService {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
-  toggleBorderBySelector(event: Event, selector: string): void {
-    let target = event.target as HTMLInputElement;
-    console.log('target', target);
+  toggleBorderBySelector(selector: string): void {
     let nodes = document.querySelectorAll(selector) as NodeListOf<HTMLElement>;
     nodes.forEach((node) => {
       if (node.classList.contains('border')) {
@@ -30,9 +28,7 @@ export class UtilsService {
     });
   }
 
-  toggleVisibilityBySelector(event: Event, selector: string): void {
-    let target = event.target as HTMLInputElement;
-    console.log('target', target);
+  toggleVisibilityBySelector(selector: string): void {
     let nodes = document.querySelectorAll(selector) as NodeListOf<HTMLElement>;
     nodes.forEach((node) => {
       if (node.classList.contains('invisible')) {
@@ -43,7 +39,7 @@ export class UtilsService {
     });
   }
 
-  toggleVisibilityOfGrids(on?: boolean): void {
+  toggleVisibilityOfGrids(): void {
     const oddGrids = [
       ...this.gameStateService.grid1,
       ...this.gameStateService.grid3,
@@ -51,26 +47,41 @@ export class UtilsService {
       ...this.gameStateService.grid7,
       ...this.gameStateService.grid9,
     ];
+    // toggle state
+    const toggled = !this.gameStateService.checkedGrid();
+    this.gameStateService.checkedGrid.set(toggled);
+    console.log('toggled', toggled);
+
     oddGrids.forEach((id) => {
       const cellById = document.getElementById(id);
-      console.log('on', on);
-      console.log('id', id);
-      console.log('cellById', cellById);
-      if (cellById !== null && on) {
-        console.log('on:true cellById', cellById);
-        this.renderer.addClass(cellById, 'bg-dark');
-        this.renderer.addClass(cellById, 'text-white');
+      if (cellById === null) {
+        console.error('cellById', cellById, ' not found.');
         return;
       }
-      if (cellById !== null && cellById.classList.contains('bg-dark')) {
-        console.log('cellById', cellById);
-        this.renderer.removeClass(cellById, 'bg-dark');
-        this.renderer.removeClass(cellById, 'text-white');
-      } else {
-        console.log('cellById', cellById);
+      if (toggled) {
         this.renderer.addClass(cellById, 'bg-dark');
         this.renderer.addClass(cellById, 'text-white');
+      } else {
+        this.renderer.removeClass(cellById, 'bg-dark');
+        this.renderer.removeClass(cellById, 'text-white');
       }
     });
+  }
+
+  // TODO: https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators
+  //  and try/catch for null ??
+  toggleGuess(value: number, targetCellId: string) {
+    const cellById = document.getElementById(targetCellId);
+    if (cellById === null) {
+      console.error('cellById', cellById, ' not found.');
+      return;
+    }
+    const guess = cellById.querySelector(`#GV${value}`);
+    if (guess === null) {
+      console.error('guess', guess, ' not found.');
+      return;
+    }
+
+    this.renderer.addClass(guess, 'text-danger');
   }
 }

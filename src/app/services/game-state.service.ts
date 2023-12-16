@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { SudokuCreator } from '@algorithm.ts/sudoku';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GameStateService {
+  checkedGrid = signal<boolean>(false);
   gameOn = false;
   puzzle = {};
   solution = {};
@@ -16,7 +17,6 @@ export class GameStateService {
   writeMode = false; // filling squares in pencil or pen mode
   pencilMode = true;
   penMode = true;
-
   // 3 x 3 = 9
   creator = new SudokuCreator({ childMatrixWidth: 3 });
   sudoku = this.creator.createSudoku(1.0);
@@ -33,6 +33,8 @@ export class GameStateService {
   grid7 = ['G1', 'H1', 'I1', 'G2', 'H2', 'I2', 'G3', 'H3', 'I3'];
   grid8 = ['G4', 'H4', 'I4', 'G5', 'H5', 'I5', 'G6', 'H6', 'I6'];
   grid9 = ['G7', 'H7', 'I7', 'G8', 'H8', 'I8', 'G9', 'H9', 'I9'];
+
+  // }
 
   constructor() {}
 }
