@@ -33,5 +33,7 @@ export class CellDemoComponent implements AfterContentInit {
     // load defaults
     this.utils.toggleVisibilityOfGrids();
     console.log('sudoku', this.gameState.sudoku);
+    console.log('cells', this.gameState.cells);
+    this.utils.initializeBoard();
   }
 }

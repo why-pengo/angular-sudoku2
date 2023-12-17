@@ -1,5 +1,6 @@
 import { inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { GameStateService } from './game-state.service';
+import { Cell } from './cell';
 
 @Injectable({
   providedIn: 'root',
@@ -71,17 +72,38 @@ export class UtilsService {
   // TODO: https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators
   //  and try/catch for null ??
   toggleGuess(value: number, targetCellId: string) {
-    const cellById = document.getElementById(targetCellId);
-    if (cellById === null) {
-      console.error('cellById', cellById, ' not found.');
-      return;
-    }
-    const guess = cellById.querySelector(`#GV${value}`);
+    const guess = document.querySelector(`#${targetCellId}GV${value}`);
     if (guess === null) {
       console.error('guess', guess, ' not found.');
       return;
     }
+    if (guess.classList.contains('text-danger')) {
+      this.renderer.removeClass(guess, 'text-danger');
+    } else {
+      this.renderer.addClass(guess, 'text-danger');
+    }
+  }
 
-    this.renderer.addClass(guess, 'text-danger');
+  initializeBoard() {
+    for (let i in this.gameStateService.cells) {
+      const cell: Cell = this.gameStateService.cells[i];
+      if (cell.puzzle === -1) continue;
+      let el = this.getBoardCellValueById(cell.id);
+      if (el === null) {
+        console.error(`${cell.id} not found!`);
+        return;
+      }
+      el.textContent = `${cell.puzzle}`;
+    }
+  }
+
+  getCellById(cellId: string): Cell {
+    let cell: Cell = this.gameStateService.cells.find((c) => c.id === cellId)!;
+    console.log(`cell[${cellId}] = ${JSON.stringify(cell)}`);
+    return cell;
+  }
+
+  getBoardCellValueById(cellId: string): Element | null {
+    return document.querySelector(`#${cellId}CV`);
   }
 }

@@ -1,18 +1,18 @@
 <div class="guess-container-left">
-  <div class="guess text-danger" id="GV1">1</div>
-  <div class="guess" id="GV2">2</div>
-  <div class="guess" id="GV3">3</div>
-  <div class="guess" id="GV4">4</div>
-  <div class="guess" id="GV5">5</div>
+  <div class="guess" id="{{Id}}GV1">1</div>
+  <div class="guess" id="{{Id}}GV2">2</div>
+  <div class="guess" id="{{Id}}GV3">3</div>
+  <div class="guess" id="{{Id}}GV4">4</div>
+  <div class="guess" id="{{Id}}GV5">5</div>
 </div>
-<div class="cell-value-container">
+<div (click)="onCellClick($event)" class="cell-value-container">
   <div class="cell-coordinates">{{ Id }}</div>
-  <div class="cell-value">7</div>
+  <div class="cell-value" id="{{Id}}CV"></div>
 </div>
 <div class="guess-container-right">
-  <div class="guess" id="GV6">6</div>
-  <div class="guess" id="GV7">7</div>
-  <div class="guess" id="GV8">8</div>
-  <div class="guess" id="GV9">9</div>
+  <div class="guess" id="{{Id}}GV6">6</div>
+  <div class="guess" id="{{Id}}GV7">7</div>
+  <div class="guess" id="{{Id}}GV8">8</div>
+  <div class="guess" id="{{Id}}GV9">9</div>
 </div>
 
