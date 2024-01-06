@@ -39,8 +39,9 @@ html {
 }
 
 .guess {
-  @extend .row;
+  //@extend .row;
   @extend .justify-content-center;
+  display: flex;
   font-size: .7rem;
 }
 
@@ -62,7 +63,11 @@ html {
   @extend .justify-content-center;
   font-size: 2.5rem;
   transform: translateY(-5%);
-  z-index: 5;
+}
+
+.cell-selected {
+  background-color: $green-100;
+  color: white;
 }
 
 .game-row {

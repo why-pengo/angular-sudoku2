@@ -8,7 +8,7 @@ import { Cell } from './cell';
 export class GameStateService {
   checkedGrid = signal<boolean>(false);
   wasGuess = false;
-  numberClicked = '0';
+  numberClicked = 0;
   curHlCellId = '0';
   // TODO: implement modes
   commandMode = true; // command mode: highlighting, etc
