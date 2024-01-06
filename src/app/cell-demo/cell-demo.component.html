@@ -1,50 +1,49 @@
-<ul class="list-group">
-  <li class="list-group-item border-0">
-    <button (click)="toggleBorder('.guess-container-left')" class="btn btn-primary" type="button">Toggle Left
-      Guess
-      Border
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleBorder('.guess-container-right')" class="btn btn-primary" type="button">Toggle Right
-      Guess
-      Border
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleBorder('.cell-value-container')" class="btn btn-primary" type="button">Toggle Cell
-      Value
-      Container
-      Border
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleBorder('.game-row')" class="btn btn-primary" type="button">Toggle Game Row
-      Border
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleVisibility('.cell-coordinates')" class="btn btn-primary" type="button">Toggle
-      Cell
-      Coordinates
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleVisibilityOfGrids()" class="btn btn-primary" type="button">Toggle
-      Checked
-      Grid
-      Visibility
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleVisibility('.guess')" class="btn btn-primary" type="button">Toggle
-      Guesses
-      Visibility
-    </button>
-  </li>
-  <li class="list-group-item border-0">
-    <button (click)="toggleGuess(6, 'A3')" class="btn btn-primary" type="button">Toggle
-      6 in A3
-    </button>
-  </li>
-</ul>
+<app-board>
+  <div class="game-menu">
+    <ul class="list-group">
+      <li class="list-group-item border-0">
+        <a ariaCurrentWhenActive="page" routerLink="/game" routerLinkActive="active">Game</a>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleBorder('.guess-container-left')" autocomplete="off" class="btn-check" id="btn-tlgb"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tlgb">Toggle Left Guess Border</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleBorder('.guess-container-right')" autocomplete="off" class="btn-check" id="btn-trgb"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-trgb">Toggle Right Guess Border</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleBorder('.cell-value-container')" autocomplete="off" class="btn-check" id="btn-tcvcb"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tcvcb">Toggle Cell Value Container Border</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleBorder('.game-row')" autocomplete="off" class="btn-check" id="btn-tgrb"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tgrb">Toggle Game Row Border</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleVisibility('.cell-coordinates')" autocomplete="off" class="btn-check" id="btn-tcc"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tcc">Toggle Cell Coordinates</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleVisibilityOfGrids()" autocomplete="off" class="btn-check" id="btn-tcgv"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tcgv">Toggle Checked Grid Visibility</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleVisibility('.guess')" autocomplete="off" class="btn-check" id="btn-tgv"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-tgv">Toggle Guess Visibility</label>
+      </li>
+      <li class="list-group-item border-0">
+        <input (click)="toggleGuess(6, 'A3')" autocomplete="off" class="btn-check" id="btn-t6a3"
+               type="checkbox">
+        <label class="btn btn-primary" for="btn-t6a3">Toggle 6 in A3</label>
+      </li>
+    </ul>
+  </div>
+</app-board>

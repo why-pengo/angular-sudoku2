@@ -1,27 +1,23 @@
-import { AfterViewChecked, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CellComponent } from '../cell/cell.component';
-import { CellDemoComponent } from '../cell-demo/cell-demo.component';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, CellComponent, CellDemoComponent],
+  imports: [CommonModule, CellComponent, RouterOutlet],
   templateUrl: './board.component.html',
 })
-export class BoardComponent implements AfterViewChecked {
+export class BoardComponent {
   rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
   rowsCount = Array.from(Array(this.rows.length).keys())
     .map((x) => x + 1)
     .map(String);
   private gameState = inject(GameStateService);
   private utils = inject(UtilsService);
-
-  ngAfterViewChecked(): void {
-    // this.utils.toggleVisibilityOfGrids();
-  }
 
   onCellClick($event: MouseEvent) {
     const cellId = this.utils.getCellIdFromClickEventTarget(

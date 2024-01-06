@@ -42,7 +42,7 @@ export class GameStateService {
       if (k > 9) {
         k = 1;
       }
-      console.log(`j = ${j}`);
+      // console.log(`j = ${j}`);
       const c: Cell = {
         id: `${this.rows[j]}${k}`,
         guesses: [],
