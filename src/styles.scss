@@ -19,7 +19,6 @@ html {
   }
 }
 
-
 .cell-value-container {
   @extend .float-start;
   @extend .col-8;
@@ -42,7 +41,7 @@ html {
   //@extend .row;
   @extend .justify-content-center;
   display: flex;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .cell {
@@ -55,7 +54,7 @@ html {
 .cell-coordinates {
   @extend .row;
   @extend .justify-content-center;
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 .cell-value {
@@ -67,7 +66,35 @@ html {
 
 .cell-selected {
   background-color: $green-100;
-  color: white;
+  color: $green-200 !important;
+}
+
+.cell-value-selected {
+  font-size: 3.2rem;
+  color: $green-400 !important;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px $danger,
+    0 0 40px $danger,
+    0 0 50px $danger,
+    0 0 60px $danger,
+    0 0 70px $danger;
+  }
+  to {
+    text-shadow: 0 0 20px #fff,
+    0 0 30px $primary,
+    0 0 40px $primary,
+    0 0 50px $primary,
+    0 0 60px $primary,
+    0 0 70px $primary,
+    0 0 80px $primary;
+  }
 }
 
 .game-row {
@@ -101,4 +128,26 @@ html {
   //@extend .rounded;
   @extend .p-1;
   @extend .col;
+}
+
+.number-pad {
+  font-size: 2.2rem;
+  margin: .1rem;
+  min-width: 3rem;
+}
+
+#number-pad-list-group {
+  padding: 0;
+  text-align: center;
+}
+
+#pen-pad-list-group {
+  padding: 0;
+  text-align: center;
+}
+
+.pen-pad {
+  margin: .1rem;
+  min-width: 3rem;
+  text-align: center;
 }

@@ -106,13 +106,12 @@ export class UtilsService {
 
   getCellById(cellId: string): Cell {
     const cell: Cell = this.gameState.cells.find((c) => c.id === cellId)!;
-    console.log(`cell[${cellId}] = ${JSON.stringify(cell)}`);
+    // console.log(`cell[${cellId}] = ${JSON.stringify(cell)}`);
     return cell;
   }
 
   getCellIdFromClickEventTarget(target: HTMLElement): string {
     let cellId: string;
-    console.log(target);
     if (target.classList.contains('cell-coordinates')) {
       cellId = target.innerHTML.slice(0, 2);
     } else {
@@ -121,7 +120,6 @@ export class UtilsService {
     if (cellId.endsWith('CV')) {
       cellId = cellId.slice(0, 2);
     }
-    console.log('cellId', cellId);
     return cellId;
   }
 
@@ -129,8 +127,51 @@ export class UtilsService {
     return document.querySelector(`#${cellId}CV`);
   }
 
+  getSelectedValue(cell: Cell): number {
+    let selectedValue = 0;
+    if (cell.choice !== 0) {
+      selectedValue = cell.choice;
+    }
+    if (selectedValue === 0) {
+      if (cell.puzzle !== -1) {
+        selectedValue = cell.puzzle;
+      }
+    }
+    return selectedValue;
+  }
+
+  hightlightSelectedCellValues(cellId: string) {
+    const cellIn: Cell = this.getCellById(cellId);
+    const selectedValue = this.getSelectedValue(cellIn);
+    if (selectedValue === 0) return;
+    for (const k in this.gameState.cells) {
+      const cell: Cell = this.gameState.cells[k];
+      if (selectedValue === cell.choice || selectedValue === cell.puzzle) {
+        const el = document.getElementById(
+          cell.id.toString() + 'CV',
+        ) as HTMLElement;
+        this.renderer.addClass(el, 'cell-value-selected');
+        console.log('add cell-value-selected to', el);
+      }
+    }
+  }
+
+  unHighlightSelectedCellValues(cellId: string) {
+    const cellIn: Cell = this.getCellById(cellId);
+    const selectedValue = this.getSelectedValue(cellIn);
+    if (selectedValue === 0) return;
+    for (const k in this.gameState.cells) {
+      const cell = this.gameState.cells[k];
+      if (selectedValue === cell.choice || selectedValue === cell.puzzle) {
+        const el = document.getElementById(
+          cell.id.toString() + 'CV',
+        ) as HTMLElement;
+        this.renderer.removeClass(el, 'cell-value-selected');
+      }
+    }
+  }
+
   highlightSquareByValue(cellId: string) {
-    console.log(`highlightSquareByValue cellId = ${cellId}`);
     const cellIn: Cell = this.getCellById(cellId);
     if (cellIn.choice === 0) return;
     for (const k in this.gameState.cells) {
@@ -143,7 +184,6 @@ export class UtilsService {
   }
 
   unHighlightSquareByValue(cellId: string) {
-    console.log(`unHighlightSquareByValue cellId = ${cellId}`);
     const cellIn: Cell = this.getCellById(cellId);
     for (const k in this.gameState.cells) {
       const cell = this.gameState.cells[k];
@@ -156,10 +196,8 @@ export class UtilsService {
 
   highlightRowAndColumn(cellId: string) {
     const [row, column] = cellId.split('');
-    console.log(`highlighting row = ${row}, column = ${column}`);
     if (cellId === this.gameState.curHlCellId) return;
     this.gameState.curHlCellId = cellId;
-
     for (const i in this.gameState.cells) {
       const cell: Cell = this.gameState.cells[i];
       if (cell.id.endsWith(column)) {
@@ -177,8 +215,6 @@ export class UtilsService {
 
   unHighlightRowAndColumn(cellId: string) {
     const [row, column] = cellId.split('');
-    console.log(`unhighlighting row = ${row}, column = ${column}`);
-
     for (const i in this.gameState.cells) {
       const cell: Cell = this.gameState.cells[i];
       if (cell.id.endsWith(column)) {
