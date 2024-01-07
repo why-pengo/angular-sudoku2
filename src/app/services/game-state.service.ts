@@ -11,10 +11,8 @@ export class GameStateService {
   numberClicked = 0;
   curHlCellId = '0';
   // TODO: implement modes
-  commandMode = true; // command mode: highlighting, etc
-  writeMode = false; // filling squares in pencil or pen mode
   pencilMode = true;
-  penMode = true;
+  penMode = false;
   creator = new SudokuCreator({ childMatrixWidth: 3 });
   sudoku = this.creator.createSudoku(1.0);
   rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];

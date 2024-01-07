@@ -15,15 +15,32 @@ export class GameComponent implements AfterViewInit {
   private utils = inject(UtilsService);
   private gameState = inject(GameStateService);
 
-  toggleGuess(value: number, targetCellId: string) {
-    this.utils.toggleGuess(value, targetCellId);
-  }
-
   ngAfterViewInit(): void {
     // load defaults
     console.log('sudoku', this.gameState.sudoku);
     console.log('cells', this.gameState.cells);
     this.utils.initializeBoard();
     this.utils.setGridDarkBg(true);
+  }
+
+  onNumberClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const numberClicked = parseInt(target.id.charAt(target.id.length - 1));
+    console.log(numberClicked);
+    this.gameState.numberClicked = numberClicked;
+  }
+
+  onPenClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const penClicked = target.id;
+    console.log(penClicked);
+    if (penClicked === 'pen') {
+      this.gameState.penMode = true;
+      this.gameState.pencilMode = false;
+    }
+    if (penClicked === 'pencil') {
+      this.gameState.penMode = false;
+      this.gameState.pencilMode = true;
+    }
   }
 }
