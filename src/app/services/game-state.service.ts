@@ -7,8 +7,7 @@ import { Cell } from './cell';
 })
 export class GameStateService {
   checkedGrid = signal<boolean>(false);
-  wasGuess = false;
-  numberClicked = 0;
+  numberClicked = 1;
   curHlCellId = '0';
   // TODO: implement modes
   pencilMode = true;

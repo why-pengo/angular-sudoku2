@@ -23,8 +23,8 @@ export class BoardComponent {
     const cellId = this.utils.getCellIdFromClickEventTarget(
       $event.target as HTMLElement,
     );
-    if (this.gameState.wasGuess) {
-      this.utils.update_puzzle(cellId);
+    if (this.gameState.penMode) {
+      this.utils.setChoice(cellId);
     } else {
       if (this.utils.getCellById(cellId)) {
         if (this.gameState.curHlCellId !== '0') {
@@ -36,6 +36,9 @@ export class BoardComponent {
         this.utils.highlightRowAndColumn(cellId);
         this.utils.highlightSquareByValue(cellId);
         this.utils.hightlightSelectedCellValues(cellId);
+      }
+      if (this.gameState.pencilMode) {
+        this.utils.addGuess(cellId);
       }
     }
   }

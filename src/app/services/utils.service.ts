@@ -228,24 +228,58 @@ export class UtilsService {
     }
   }
 
-  setCellValue(cell: Cell) {
+  updateCell(cell: Cell) {
     const el = document.getElementById(cell.id) as HTMLElement;
     const ch = el.querySelector('.cell-value') as HTMLElement;
-    ch.textContent = cell.choice.toString();
+    if (cell.choice !== 0) {
+      ch.textContent = cell.choice.toString();
+    }
+    // todo: update guesses
+    console.log('guesses', cell.guesses);
+    if (this.gameState.numberClicked === cell.puzzle) {
+      return;
+    }
+    for (let i = 1; i <= 9; i++) {
+      const gv = document.getElementById(`${cell.id}GV${i}`) as HTMLElement;
+      if (cell.guesses.includes(i)) {
+        this.renderer.removeClass(gv, 'invisible');
+      } else {
+        this.renderer.addClass(gv, 'invisible');
+      }
+    }
   }
 
-  update_puzzle(cellId: string) {
+  setChoice(cellId: string) {
     console.log(
       `cellId = ${cellId}, numberClicked = ${this.gameState.numberClicked}`,
     );
     const cell: Cell = this.getCellById(cellId);
     console.log(`cell = ${JSON.stringify(cell)}`);
     if (this.gameState.numberClicked !== cell.solution) {
-      alert(`Error: incorrect.`);
+      alert(
+        `Error: incorrect. ${this.gameState.numberClicked} !== ${cell.solution}`,
+      );
     } else {
       cell.choice = this.gameState.numberClicked;
       console.log(`cell = ${JSON.stringify(cell)}`);
-      this.setCellValue(cell);
+      this.updateCell(cell);
     }
+  }
+
+  addGuess(cellId: string) {
+    console.log(
+      `cellId = ${cellId}, numberClicked = ${this.gameState.numberClicked}`,
+    );
+    const cell: Cell = this.getCellById(cellId);
+    if (cell.guesses.includes(this.gameState.numberClicked)) {
+      const index = cell.guesses.indexOf(this.gameState.numberClicked);
+      if (index > -1) {
+        cell.guesses.splice(index, 1);
+      }
+    } else {
+      cell.guesses.push(this.gameState.numberClicked);
+    }
+    console.log(`cell = ${JSON.stringify(cell)}`);
+    this.updateCell(cell);
   }
 }
