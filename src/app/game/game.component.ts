@@ -34,6 +34,10 @@ export class GameComponent implements AfterViewInit {
     const target = event.target as HTMLElement;
     const penClicked = target.id;
     console.log(penClicked);
+    if (penClicked === 'hand') {
+      this.gameState.penMode = false;
+      this.gameState.pencilMode = false;
+    }
     if (penClicked === 'pen') {
       this.gameState.penMode = true;
       this.gameState.pencilMode = false;

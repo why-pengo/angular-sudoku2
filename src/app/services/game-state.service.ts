@@ -10,7 +10,7 @@ export class GameStateService {
   numberClicked = 1;
   curHlCellId = '0';
   // TODO: implement modes
-  pencilMode = true;
+  pencilMode = false;
   penMode = false;
   creator = new SudokuCreator({ childMatrixWidth: 3 });
   sudoku = this.creator.createSudoku(1.0);

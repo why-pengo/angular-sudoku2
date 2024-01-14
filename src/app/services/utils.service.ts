@@ -112,14 +112,10 @@ export class UtilsService {
 
   getCellIdFromClickEventTarget(target: HTMLElement): string {
     let cellId: string;
-    if (target.classList.contains('cell-coordinates')) {
-      cellId = target.innerHTML.slice(0, 2);
-    } else {
-      cellId = target.id;
+    if (target.id === undefined || target.id === null) {
+      alert(`target.id is undefined or null ${target}`);
     }
-    if (cellId.endsWith('CV')) {
-      cellId = cellId.slice(0, 2);
-    }
+    cellId = target.id.slice(0, 2);
     return cellId;
   }
 
