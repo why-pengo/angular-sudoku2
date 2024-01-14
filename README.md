@@ -8,7 +8,7 @@ npx ng deploy --base-href=/angular-sudoku2/
 
 # TODO:
 
-- pen/pencil functionality
-- guesses
+- guesses highlight on matching
+- guesses clearing on match choice
 - local storage of game info
 - ???

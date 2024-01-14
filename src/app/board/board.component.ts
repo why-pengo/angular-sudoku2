@@ -21,7 +21,7 @@ export class BoardComponent {
 
   onCellClick($event: MouseEvent) {
     const target = $event.target as HTMLElement;
-    console.log('target.id', target.id);
+    console.log('target', target);
     const cellId = this.utils.getCellIdFromClickEventTarget(
       $event.target as HTMLElement,
     );

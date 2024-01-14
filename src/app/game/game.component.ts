@@ -17,7 +17,7 @@ export class GameComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // load defaults
-    console.log('sudoku', this.gameState.sudoku);
+    // console.log('sudoku', this.gameState.sudoku);
     console.log('cells', this.gameState.cells);
     this.utils.initializeBoard();
     this.utils.setGridDarkBg(true);

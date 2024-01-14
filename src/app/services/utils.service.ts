@@ -94,7 +94,8 @@ export class UtilsService {
   initializeBoard() {
     for (const i in this.gameState.cells) {
       const cell: Cell = this.gameState.cells[i];
-      if (cell.puzzle === -1) continue;
+      // if (cell.puzzle === -1) continue; // blank
+      if (cell.puzzle === 0) continue; // blank
       const el = this.getBoardCellValueById(cell.id);
       if (el === null) {
         console.error(`${cell.id} not found!`);
