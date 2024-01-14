@@ -29,6 +29,9 @@ html {
   @extend .col-2;
 }
 
+.guess-container-bottom {
+}
+
 .guess-container-right {
   @extend .float-end;
   @extend .col-2;
@@ -52,14 +55,14 @@ html {
 }
 
 .cell-coordinates {
-  @extend .row;
   @extend .justify-content-center;
   font-size: 0.6rem;
 }
 
 .cell-value {
-  @extend .row;
-  @extend .justify-content-center;
+  @extend .col;
+  @extend .p-0;
+  display: inline;
   font-size: 2.5rem;
   transform: translateY(-5%);
 }

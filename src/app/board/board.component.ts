@@ -23,6 +23,7 @@ export class BoardComponent {
     const cellId = this.utils.getCellIdFromClickEventTarget(
       $event.target as HTMLElement,
     );
+    console.log('cellId', cellId);
     if (this.gameState.penMode) {
       this.utils.setChoice(cellId);
     } else {
