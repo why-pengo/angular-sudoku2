@@ -27,12 +27,12 @@ export class BoardComponent {
       this.utils.setChoice(cellId);
     } else {
       if (this.utils.getCellById(cellId)) {
-        if (this.gameState.curHlCellId !== '0') {
-          this.utils.unHighlightRowAndColumn(this.gameState.curHlCellId);
-          this.utils.unHighlightSquareByValue(this.gameState.curHlCellId);
-          this.utils.unHighlightSelectedCellValues(this.gameState.curHlCellId);
-          this.utils.setGridDarkBg(true);
-        }
+        // if (this.gameState.curHlCellId !== '0') {
+        this.utils.unHighlightRowAndColumn(this.gameState.curHlCellId);
+        this.utils.unHighlightSquareByValue(this.gameState.curHlCellId);
+        this.utils.unHighlightSelectedCellValues(this.gameState.curHlCellId);
+        this.utils.setGridDarkBg(true);
+        // }
         this.utils.highlightRowAndColumn(cellId);
         this.utils.highlightSquareByValue(cellId);
         this.utils.hightlightSelectedCellValues(cellId);

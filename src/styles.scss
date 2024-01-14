@@ -66,11 +66,12 @@ html {
 
 .cell-selected {
   background-color: $green-100;
-  color: $green-200 !important;
+  //color: $green-400 !important;
+  color: white !important;
 }
 
 .cell-value-selected {
-  color: $green-400 !important;
+  color: white !important;
   text-align: center;
   animation: glow 2s ease-in-out infinite alternate;
 }
