@@ -10,7 +10,7 @@ export class GameStateService {
   numberClicked = 1;
   curHlCellId = '0';
   // TODO: implement modes
-  pencilMode = true;
+  pencilMode = false;
   penMode = false;
   creator = new SudokuCreator({ childMatrixWidth: 3 });
   sudoku = this.creator.createSudoku(1.0);
@@ -44,9 +44,12 @@ export class GameStateService {
         id: `${this.rows[j]}${k}`,
         guesses: [],
         choice: 0,
-        puzzle: row_p,
+        puzzle: row_p + 1,
         solution: row_s + 1,
       };
+      if (c.puzzle === c.solution) {
+        c.choice = c.solution;
+      }
       this.cells.push(c);
       if ((i + 1) % 9 === 0) {
         j++;

@@ -94,7 +94,8 @@ export class UtilsService {
   initializeBoard() {
     for (const i in this.gameState.cells) {
       const cell: Cell = this.gameState.cells[i];
-      if (cell.puzzle === -1) continue;
+      // if (cell.puzzle === -1) continue; // blank
+      if (cell.puzzle === 0) continue; // blank
       const el = this.getBoardCellValueById(cell.id);
       if (el === null) {
         console.error(`${cell.id} not found!`);
@@ -112,14 +113,10 @@ export class UtilsService {
 
   getCellIdFromClickEventTarget(target: HTMLElement): string {
     let cellId: string;
-    if (target.classList.contains('cell-coordinates')) {
-      cellId = target.innerHTML.slice(0, 2);
-    } else {
-      cellId = target.id;
+    if (target.id === undefined || target.id === null) {
+      alert(`target.id is undefined or null ${target}`);
     }
-    if (cellId.endsWith('CV')) {
-      cellId = cellId.slice(0, 2);
-    }
+    cellId = target.id.slice(0, 2);
     return cellId;
   }
 
