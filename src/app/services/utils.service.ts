@@ -177,6 +177,11 @@ export class UtilsService {
         const el = document.getElementById(cell.id.toString()) as HTMLElement;
         this.renderer.addClass(el, 'cell-selected');
       }
+      if (cell.guesses.includes(cellIn.choice)) {
+        const selector = cell.id.toString() + 'GV' + cellIn.choice.toString();
+        const el = document.getElementById(selector) as HTMLElement;
+        this.renderer.addClass(el, 'cell-selected-guess');
+      }
     }
   }
 
@@ -187,6 +192,11 @@ export class UtilsService {
       if (cellIn.choice === cell.choice) {
         const el = document.getElementById(cell.id.toString()) as HTMLElement;
         this.renderer.removeClass(el, 'cell-selected');
+      }
+      if (cell.guesses.includes(cellIn.choice)) {
+        const selector = cell.id.toString() + 'GV' + cellIn.choice.toString();
+        const el = document.getElementById(selector) as HTMLElement;
+        this.renderer.removeClass(el, 'cell-selected-guess');
       }
     }
   }
