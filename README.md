@@ -10,4 +10,4 @@ npx ng deploy --base-href=/angular-sudoku2/
 
 - guesses clearing on match choice
 - local storage of game info
-- ???
+- Throw confetti on completing puzzle

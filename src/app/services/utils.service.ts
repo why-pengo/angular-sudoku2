@@ -176,6 +176,8 @@ export class UtilsService {
       if (cellIn.choice === cell.choice) {
         const el = document.getElementById(cell.id.toString()) as HTMLElement;
         this.renderer.addClass(el, 'cell-selected');
+        this.renderer.removeClass(el, 'bg-dark');
+        this.renderer.removeClass(el, 'text-white');
       }
       if (cell.guesses.includes(cellIn.choice)) {
         const selector = cell.id.toString() + 'GV' + cellIn.choice.toString();
@@ -241,8 +243,17 @@ export class UtilsService {
     if (cell.choice !== 0) {
       ch.textContent = cell.choice.toString();
     }
+    // if choice === solution, clear guess
+    if (cell.choice === cell.solution) {
+      if (cell.guesses.includes(cell.choice)) {
+        const index = cell.guesses.indexOf(this.gameState.numberClicked);
+        if (index > -1) {
+          cell.guesses.splice(index, 1);
+        }
+      }
+    }
     // todo: update guesses
-    console.log('guesses', cell.guesses);
+    console.log('cell', cell);
     if (this.gameState.numberClicked === cell.puzzle) {
       return;
     }
@@ -267,6 +278,7 @@ export class UtilsService {
         `Error: incorrect. ${this.gameState.numberClicked} !== ${cell.solution}`,
       );
     } else {
+      // TODO: clear guesses for this choice that are on same row/col
       cell.choice = this.gameState.numberClicked;
       console.log(`cell = ${JSON.stringify(cell)}`);
       this.updateCell(cell);
