@@ -24,24 +24,15 @@ html {
   @extend .col-8;
 }
 
-.guess-container-left {
-  @extend .float-start;
-  @extend .col-2;
-}
-
-.guess-container-right {
-  @extend .float-end;
-  @extend .col-2;
-
-  // This "centers" vertically
-  transform: translateY(12%);
+.guess-container-bottom {
+  max-height: 25px;
 }
 
 .guess {
   //@extend .row;
   @extend .justify-content-center;
   display: flex;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .cell {
@@ -60,14 +51,18 @@ html {
   @extend .col;
   @extend .p-0;
   display: inline;
-  font-size: 2.5rem;
-  transform: translateY(-5%);
+  max-height: 2.76rem;
+  font-size: 2.75rem;
+  //transform: translateY(-5%);
 }
 
 .cell-selected {
   background-color: $green-100;
-  //color: $green-400 !important;
   color: white !important;
+}
+
+.cell-selected-guess {
+  color: red !important;
 }
 
 .cell-value-selected {
