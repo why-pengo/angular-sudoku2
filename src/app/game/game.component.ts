@@ -1,9 +1,12 @@
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
 import { BoardComponent } from '../board/board.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Cell } from '../services/cell';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-game',
@@ -11,16 +14,32 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [CommonModule, BoardComponent, RouterLink, RouterLinkActive],
   templateUrl: './game.component.html',
 })
-export class GameComponent implements AfterViewInit {
+export class GameComponent implements AfterViewInit, OnInit {
   private utils = inject(UtilsService);
   private gameState = inject(GameStateService);
 
   ngAfterViewInit(): void {
     // load defaults
     // console.log('sudoku', this.gameState.sudoku);
-    console.log('cells', this.gameState.cells);
+    // console.log('cells', this.gameState.cells);
     this.utils.initializeBoard();
     this.utils.setGridDarkBg(true);
+    if (this.gameState.savedGame) {
+      for (const i in this.gameState.cells) {
+        const cell: Cell = this.gameState.cells[i];
+        this.utils.updateCell(cell);
+      }
+    }
+  }
+
+  ngOnInit(): void {
+    // Bootstrap tooltip initialization
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
   }
 
   onNumberClick(event: MouseEvent) {
@@ -45,6 +64,12 @@ export class GameComponent implements AfterViewInit {
     if (penClicked === 'pencil') {
       this.gameState.penMode = false;
       this.gameState.pencilMode = true;
+    }
+    if (penClicked === 'save') {
+      this.gameState.saveGameState();
+    }
+    if (penClicked === 'delete') {
+      this.gameState.deleteGameState();
     }
   }
 }

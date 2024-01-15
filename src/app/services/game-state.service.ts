@@ -8,6 +8,7 @@ import { Cell } from './cell';
 export class GameStateService {
   checkedGrid = signal<boolean>(false);
   numberClicked = 1;
+  savedGame = false;
   curHlCellId = '0';
   // TODO: implement modes
   pencilMode = false;
@@ -27,34 +28,57 @@ export class GameStateService {
   cells: Cell[] = [];
 
   constructor() {
-    // 9x9 board is 81 cells
-    let j = 0; // rows
-    let k = 1; // cells
-    for (let i = 0; i < 81; i++) {
-      const row_p = this.sudoku.puzzle[i];
-      const row_s = this.sudoku.solution[i];
-      if (j > 9) {
-        j = 0;
+    this.loadGameState();
+  }
+
+  loadGameState() {
+    const strBuf = localStorage.getItem('savedGame');
+    let rv: Cell;
+    if (strBuf !== null) {
+      this.cells = JSON.parse(strBuf);
+      this.savedGame = true;
+    } else {
+      this.savedGame = false;
+      // 9x9 board is 81 cells
+      let j = 0; // rows
+      let k = 1; // cells
+      for (let i = 0; i < 81; i++) {
+        const row_p = this.sudoku.puzzle[i];
+        const row_s = this.sudoku.solution[i];
+        if (j > 9) {
+          j = 0;
+        }
+        if (k > 9) {
+          k = 1;
+        }
+        // console.log(`j = ${j}`);
+        const c: Cell = {
+          id: `${this.rows[j]}${k}`,
+          guesses: [],
+          choice: 0,
+          puzzle: row_p + 1,
+          solution: row_s + 1,
+        };
+        if (c.puzzle === c.solution) {
+          c.choice = c.solution;
+        }
+        this.cells.push(c);
+        if ((i + 1) % 9 === 0) {
+          j++;
+        }
+        k++;
       }
-      if (k > 9) {
-        k = 1;
-      }
-      // console.log(`j = ${j}`);
-      const c: Cell = {
-        id: `${this.rows[j]}${k}`,
-        guesses: [],
-        choice: 0,
-        puzzle: row_p + 1,
-        solution: row_s + 1,
-      };
-      if (c.puzzle === c.solution) {
-        c.choice = c.solution;
-      }
-      this.cells.push(c);
-      if ((i + 1) % 9 === 0) {
-        j++;
-      }
-      k++;
     }
+  }
+
+  saveGameState() {
+    const strBuf = JSON.stringify(this.cells);
+    localStorage.setItem('savedGame', strBuf);
+    console.log('game saved to localStorage');
+  }
+
+  deleteGameState() {
+    localStorage.clear();
+    console.log('localStorage cleared');
   }
 }
