@@ -80,13 +80,16 @@ export class UtilsService {
   //  and try/catch for null ??
   toggleGuess(value: number, targetCellId: string) {
     const guess = document.querySelector(`#${targetCellId}GV${value}`);
+    console.log('guess', guess);
     if (guess === null) {
       console.error('guess', guess, ' not found.');
       return;
     }
     if (guess.classList.contains('text-danger')) {
       this.renderer.removeClass(guess, 'text-danger');
+      this.renderer.addClass(guess, 'invisible');
     } else {
+      this.renderer.removeClass(guess, 'invisible');
       this.renderer.addClass(guess, 'text-danger');
     }
   }

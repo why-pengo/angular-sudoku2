@@ -2,31 +2,69 @@
   <div class="game-menu">
     <ul class="list-group">
       <li class="list-group-item border-0">
-        <a ariaCurrentWhenActive="page" routerLink="/game" routerLinkActive="active">Game</a>
+        <a
+          ariaCurrentWhenActive="page"
+          routerLink="/game"
+          routerLinkActive="active"
+          >Game</a
+        >
       </li>
       <li class="list-group-item border-0">
-        <input (click)="toggleBorder('.game-row')" autocomplete="off" class="btn-check" id="btn-tgrb"
-               type="checkbox">
-        <label class="btn btn-primary" for="btn-tgrb">Toggle Game Row Border</label>
+        <input
+          (click)="toggleBorder('.game-row')"
+          autocomplete="off"
+          class="btn-check"
+          id="btn-tgrb"
+          type="checkbox"
+        />
+        <label class="btn btn-primary" for="btn-tgrb"
+          >Toggle Game Row Border</label
+        >
       </li>
       <li class="list-group-item border-0">
-        <input (click)="toggleVisibility('.cell-coordinates')" autocomplete="off" class="btn-check" id="btn-tcc"
-               type="checkbox">
-        <label class="btn btn-primary" for="btn-tcc">Toggle Cell Coordinates</label>
+        <input
+          (click)="toggleVisibility('.cell-coordinates')"
+          autocomplete="off"
+          class="btn-check"
+          id="btn-tcc"
+          type="checkbox"
+        />
+        <label class="btn btn-primary" for="btn-tcc"
+          >Toggle Cell Coordinates</label
+        >
       </li>
       <li class="list-group-item border-0">
-        <input (click)="toggleVisibilityOfGrids()" autocomplete="off" class="btn-check" id="btn-tcgv"
-               type="checkbox">
-        <label class="btn btn-primary" for="btn-tcgv">Toggle Checked Grid Visibility</label>
+        <input
+          (click)="toggleVisibilityOfGrids()"
+          autocomplete="off"
+          class="btn-check"
+          id="btn-tcgv"
+          type="checkbox"
+        />
+        <label class="btn btn-primary" for="btn-tcgv"
+          >Toggle Checked Grid Visibility</label
+        >
       </li>
       <li class="list-group-item border-0">
-        <input (click)="toggleVisibility('.guess')" autocomplete="off" class="btn-check" id="btn-tgv"
-               type="checkbox">
-        <label class="btn btn-primary" for="btn-tgv">Toggle Guess Visibility</label>
+        <input
+          (click)="toggleVisibility('.guess')"
+          autocomplete="off"
+          class="btn-check"
+          id="btn-tgv"
+          type="checkbox"
+        />
+        <label class="btn btn-primary" for="btn-tgv"
+          >Toggle Guess Visibility</label
+        >
       </li>
       <li class="list-group-item border-0">
-        <input (click)="toggleGuess(6, 'A3')" autocomplete="off" class="btn-check" id="btn-t6a3"
-               type="checkbox">
+        <input
+          (click)="toggleGuess(6, 'A3')"
+          autocomplete="off"
+          class="btn-check"
+          id="btn-t6a3"
+          type="checkbox"
+        />
         <label class="btn btn-primary" for="btn-t6a3">Toggle 6 in A3</label>
       </li>
     </ul>
