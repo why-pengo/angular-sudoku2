@@ -2,8 +2,13 @@
 
 ## Deploy Github page
 
+From main branch
+
 ```bash
-npx ng deploy --base-href=/angular-sudoku2/
+npx ng build --base-href=/angular-sudoku2/
+mv /dist/browser/* /docs/
+git commit .
+git push 
 ```
 
 # TODO:
