@@ -34,10 +34,11 @@ export class GameComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     // Bootstrap tooltip initialization
-    var tooltipTriggerList = [].slice.call(
+    const tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl);
     });
   }
