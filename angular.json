@@ -25,7 +25,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/angular-sudoku2"
+              "base": "dist/"
             },
             "index": "src/index.html",
             "polyfills": [
