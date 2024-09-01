@@ -230,6 +230,38 @@ export class UtilsService {
     }
   }
 
+  areNotEqual(a: number[], b: number[]): boolean {
+    return !(JSON.stringify(a) === JSON.stringify(b));
+  }
+
+  clearGuess(cellId: string, guess: number) {
+    const [row, column] = cellId.split('');
+    for (const i in this.gameState.cells) {
+      const cell: Cell = this.gameState.cells[i];
+      if (cell.id.endsWith(column)) {
+        const filtered = cell.guesses.filter((n) => n !== guess);
+        if (this.areNotEqual(cell.guesses, filtered)) {
+          console.log(
+            `Col not eq, cellId = ${cellId}, filtered = ${filtered}, cell.guesses = ${cell.guesses}, guess = ${guess}`,
+          );
+          cell.guesses = filtered;
+          this.updateCell(cell);
+        }
+      }
+      if (cell.id.startsWith(row)) {
+        const filtered = cell.guesses.filter((n) => n !== guess);
+        if (this.areNotEqual(cell.guesses, filtered)) {
+          console.log(
+            `Row not eq, cellId = ${cellId}, filtered = ${filtered}, cell.guesses = ${cell.guesses}, guess = ${guess}`,
+          );
+          cell.guesses = filtered;
+          this.updateCell(cell);
+        }
+      }
+      // TODO: in same grid
+    }
+  }
+
   updateCell(cell: Cell) {
     const el = document.getElementById(cell.id) as HTMLElement;
     const ch = el.querySelector('.cell-value') as HTMLElement;
@@ -261,7 +293,9 @@ export class UtilsService {
     } else {
       cell.choice = this.gameState.numberClicked;
       this.updateCell(cell);
+      console.log('cell', cell);
       // TODO: clear guesses for this choice that are on same row/col
+      this.clearGuess(cellId, this.gameState.numberClicked);
       // what row to clear setChoice from gvs
       // what col to clear setChoice from gvs
       // what grid to clear setChoice from gvs
