@@ -4,6 +4,7 @@ import { CellComponent } from '../cell/cell.component';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
 import { RouterOutlet } from '@angular/router';
+import { Cell } from '../services/cell';
 
 @Component({
   selector: 'app-board',
@@ -26,13 +27,14 @@ export class BoardComponent {
     if (this.gameState.penMode) {
       this.utils.setChoice(cellId);
     } else {
-      if (this.utils.getCellById(cellId)) {
-        if (this.gameState.curHlCellId !== '0') {
-          this.utils.unHighlightRowAndColumn(this.gameState.curHlCellId);
-          this.utils.unHighlightSquareByValue(this.gameState.curHlCellId);
-          this.utils.unHighlightSelectedCellValues(this.gameState.curHlCellId);
-          this.utils.setGridDarkBg(true);
-        }
+      if (this.gameState.curHlCellId !== '0') {
+        this.utils.unHighlightRowAndColumn(this.gameState.curHlCellId);
+        this.utils.unHighlightSquareByValue(this.gameState.curHlCellId);
+        this.utils.unHighlightSelectedCellValues(this.gameState.curHlCellId);
+        this.utils.setGridDarkBg(true);
+      }
+      const cell: Cell = this.utils.getCellById(cellId);
+      if (cell.choice !== 0) {
         this.utils.highlightRowAndColumn(cellId);
         this.utils.highlightSquareByValue(cellId);
         this.utils.hightlightSelectedCellValues(cellId);
