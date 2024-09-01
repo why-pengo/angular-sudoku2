@@ -1,194 +1,193 @@
-<app-board>
-  <div class="game-menu">
-    <ul class="list-group">
-      <!--      <li class="list-group-item border-0">-->
-      <!--        <a-->
-      <!--          ariaCurrentWhenActive="page"-->
-      <!--          routerLink="/cell-demo"-->
-      <!--          routerLinkActive="active"-->
-      <!--        >Cell Demo</a-->
-      <!--        >-->
-      <!--      </li>-->
-      <li class="list-group-item border-0" id="number-pad-list-group">
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          checked
-          class="btn-check"
-          id="number1"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number1">1</label>
+<div class="game-menu d-flex">
+  <ul class="list-group">
+    <!--      <li class="list-group-item border-0">-->
+    <!--        <a-->
+    <!--          ariaCurrentWhenActive="page"-->
+    <!--          routerLink="/cell-demo"-->
+    <!--          routerLinkActive="active"-->
+    <!--        >Cell Demo</a-->
+    <!--        >-->
+    <!--      </li>-->
+    <li class="list-group-item border-0" id="number-pad-list-group">
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        checked
+        class="btn-check"
+        id="number1"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number1">1</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number2"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number2">2</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number2"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number2">2</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number3"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number3">3</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number3"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number3">3</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number4"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number4">4</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number4"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number4">4</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number5"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number5">5</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number5"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number5">5</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number6"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number6">6</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number6"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number6">6</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number7"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number7">7</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number7"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number7">7</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number8"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number8">8</label>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number8"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number8">8</label>
 
-        <input
-          (click)="onNumberClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="number9"
-          name="numbers"
-          type="radio"
-        />
-        <label class="btn number-pad" for="number9">9</label>
-      </li>
-      <li class="list-group-item border-0" id="pen-pad-list-group">
-        <input
-          (click)="onPenClick($event)"
-          autocomplete="off"
-          checked
-          class="btn-check"
-          id="hand"
-          name="pen-or-pencil"
-          type="radio"
-        />
-        <label
-          class="btn pen-pad"
-          data-bs-placement="bottom"
-          data-bs-title="Mouse mode"
-          data-bs-toggle="tooltip"
-          for="hand"
-        >
-          <i class="bi-hand-index-fill fs-3"></i>
-        </label>
-        <input
-          (click)="onPenClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="pencil"
-          name="pen-or-pencil"
-          type="radio"
-        />
-        <label
-          class="btn pen-pad"
-          data-bs-placement="bottom"
-          data-bs-title="Add guesses"
-          data-bs-toggle="tooltip"
-          for="pencil"
-        >
-          <i class="bi-pencil-fill fs-3"></i>
-        </label>
-        <input
-          (click)="onPenClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="pen"
-          name="pen-or-pencil"
-          type="radio"
-        />
-        <label
-          class="btn pen-pad"
-          data-bs-placement="bottom"
-          data-bs-title="Make choice"
-          data-bs-toggle="tooltip"
-          for="pen"
-        >
-          <i class="bi-pen-fill fs-3"></i>
-        </label>
-        <input
-          (click)="onPenClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="save"
-          name="pen-or-pencil"
-          type="radio"
-        />
-        <label
-          class="btn pen-pad"
-          data-bs-placement="bottom"
-          data-bs-title="Save current game to localStorage"
-          data-bs-toggle="tooltip"
-          for="save"
-        >
-          <i class="bi-cloud-download-fill fs-3"></i>
-        </label>
-        <input
-          (click)="onPenClick($event)"
-          autocomplete="off"
-          class="btn-check"
-          id="delete"
-          name="pen-or-pencil"
-          type="radio"
-        />
-        <label
-          class="btn pen-pad"
-          data-bs-placement="bottom"
-          data-bs-title="Clear localStorage"
-          data-bs-toggle="tooltip"
-          for="delete"
-        >
-          <i class="bi-trash-fill text-black fs-3"></i>
-        </label>
-      </li>
-    </ul>
-  </div>
-</app-board>
+      <input
+        (click)="onNumberClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="number9"
+        name="numbers"
+        type="radio"
+      />
+      <label class="btn number-pad" for="number9">9</label>
+      <!--    </li>-->
+      <!--    <li class="list-group-item border-0" id="pen-pad-list-group">-->
+      <input
+        (click)="onPenClick($event)"
+        autocomplete="off"
+        checked
+        class="btn-check"
+        id="hand"
+        name="pen-or-pencil"
+        type="radio"
+      />
+      <label
+        class="btn pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Mouse mode"
+        data-bs-toggle="tooltip"
+        for="hand"
+      >
+        <i class="bi-hand-index-fill"></i>
+      </label>
+      <input
+        (click)="onPenClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="pencil"
+        name="pen-or-pencil"
+        type="radio"
+      />
+      <label
+        class="btn pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Add guesses"
+        data-bs-toggle="tooltip"
+        for="pencil"
+      >
+        <i class="bi-pencil-fill"></i>
+      </label>
+      <input
+        (click)="onPenClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="pen"
+        name="pen-or-pencil"
+        type="radio"
+      />
+      <label
+        class="btn pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Make choice"
+        data-bs-toggle="tooltip"
+        for="pen"
+      >
+        <i class="bi-pen-fill"></i>
+      </label>
+      <input
+        (click)="onPenClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="save"
+        name="pen-or-pencil"
+        type="radio"
+      />
+      <label
+        class="btn pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Save current game to localStorage"
+        data-bs-toggle="tooltip"
+        for="save"
+      >
+        <i class="bi-cloud-download-fill"></i>
+      </label>
+      <input
+        (click)="onPenClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="delete"
+        name="pen-or-pencil"
+        type="radio"
+      />
+      <label
+        class="btn pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Clear localStorage"
+        data-bs-toggle="tooltip"
+        for="delete"
+      >
+        <i class="bi-trash-fill text-black"></i>
+      </label>
+    </li>
+  </ul>
+</div>
+<app-board></app-board>
