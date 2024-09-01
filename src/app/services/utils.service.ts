@@ -236,16 +236,9 @@ export class UtilsService {
     if (cell.choice !== 0) {
       ch.textContent = cell.choice.toString();
     }
-    // if choice === solution, clear guess
     if (cell.choice === cell.solution) {
-      if (cell.guesses.includes(cell.choice)) {
-        const index = cell.guesses.indexOf(this.gameState.numberClicked);
-        if (index > -1) {
-          cell.guesses.splice(index, 1);
-        }
-      }
+      cell.guesses = [];
     }
-    // todo: update guesses
     if (this.gameState.numberClicked === cell.puzzle) {
       return;
     }
@@ -266,9 +259,12 @@ export class UtilsService {
         `Error: incorrect. ${this.gameState.numberClicked} !== ${cell.solution}`,
       );
     } else {
-      // TODO: clear guesses for this choice that are on same row/col
       cell.choice = this.gameState.numberClicked;
       this.updateCell(cell);
+      // TODO: clear guesses for this choice that are on same row/col
+      // what row to clear setChoice from gvs
+      // what col to clear setChoice from gvs
+      // what grid to clear setChoice from gvs
     }
   }
 
