@@ -20,12 +20,9 @@ export class BoardComponent {
   private utils = inject(UtilsService);
 
   onCellClick($event: MouseEvent) {
-    const target = $event.target as HTMLElement;
-    console.log('target', target);
     const cellId = this.utils.getCellIdFromClickEventTarget(
       $event.target as HTMLElement,
     );
-    console.log('cellId', cellId);
     if (this.gameState.penMode) {
       this.utils.setChoice(cellId);
     } else {

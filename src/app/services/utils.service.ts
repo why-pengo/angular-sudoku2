@@ -49,7 +49,6 @@ export class UtilsService {
     const toggled = !this.gameState.checkedGrid();
     this.gameState.checkedGrid.set(toggled);
     this.setGridDarkBg(toggled);
-    console.log('toggled', toggled);
   }
 
   setGridDarkBg(toggled: boolean) {
@@ -80,7 +79,6 @@ export class UtilsService {
   //  and try/catch for null ??
   toggleGuess(value: number, targetCellId: string) {
     const guess = document.querySelector(`#${targetCellId}GV${value}`);
-    console.log('guess', guess);
     if (guess === null) {
       console.error('guess', guess, ' not found.');
       return;
@@ -109,18 +107,11 @@ export class UtilsService {
   }
 
   getCellById(cellId: string): Cell {
-    const cell: Cell = this.gameState.cells.find((c) => c.id === cellId)!;
-    // console.log(`cell[${cellId}] = ${JSON.stringify(cell)}`);
-    return cell;
+    return this.gameState.cells.find((c) => c.id === cellId)!;
   }
 
   getCellIdFromClickEventTarget(target: HTMLElement): string {
-    let cellId: string;
-    if (target.id === undefined || target.id === null) {
-      alert(`target.id is undefined or null ${target}`);
-    }
-    cellId = target.id.slice(0, 2);
-    return cellId;
+    return target.id?.slice(0, 2) ?? 'no id';
   }
 
   getBoardCellValueById(cellId: string): Element | null {
@@ -151,7 +142,6 @@ export class UtilsService {
           cell.id.toString() + 'CV',
         ) as HTMLElement;
         this.renderer.addClass(el, 'cell-value-selected');
-        console.log('add cell-value-selected to', el);
       }
     }
   }
@@ -256,7 +246,6 @@ export class UtilsService {
       }
     }
     // todo: update guesses
-    console.log('cell', cell);
     if (this.gameState.numberClicked === cell.puzzle) {
       return;
     }
@@ -271,11 +260,7 @@ export class UtilsService {
   }
 
   setChoice(cellId: string) {
-    console.log(
-      `cellId = ${cellId}, numberClicked = ${this.gameState.numberClicked}`,
-    );
     const cell: Cell = this.getCellById(cellId);
-    console.log(`cell = ${JSON.stringify(cell)}`);
     if (this.gameState.numberClicked !== cell.solution) {
       alert(
         `Error: incorrect. ${this.gameState.numberClicked} !== ${cell.solution}`,
@@ -283,16 +268,15 @@ export class UtilsService {
     } else {
       // TODO: clear guesses for this choice that are on same row/col
       cell.choice = this.gameState.numberClicked;
-      console.log(`cell = ${JSON.stringify(cell)}`);
       this.updateCell(cell);
     }
   }
 
   addGuess(cellId: string) {
-    console.log(
-      `cellId = ${cellId}, numberClicked = ${this.gameState.numberClicked}`,
-    );
     const cell: Cell = this.getCellById(cellId);
+    if (cell.choice) {
+      return;
+    }
     if (cell.guesses.includes(this.gameState.numberClicked)) {
       const index = cell.guesses.indexOf(this.gameState.numberClicked);
       if (index > -1) {
@@ -301,7 +285,6 @@ export class UtilsService {
     } else {
       cell.guesses.push(this.gameState.numberClicked);
     }
-    console.log(`cell = ${JSON.stringify(cell)}`);
     this.updateCell(cell);
   }
 }

@@ -1,21 +1,25 @@
 <div data-cy="cell" class="cell" id="{{ Id }}">
-  <div data-cy="r1" class="d-flex justify-content-evenly">
-    <div data-cy="cl" class="d-flex flex-column">
+  <div data-cy="r1" id="{{ Id }}r1" class="d-flex justify-content-evenly">
+    <div data-cy="cl" id="{{ Id }}cl" class="d-flex flex-column">
       <div class="guess invisible" id="{{ Id }}GV1">1</div>
       <div class="guess invisible" id="{{ Id }}GV2">2</div>
       <div class="guess invisible" id="{{ Id }}GV3">3</div>
     </div>
-    <div data-cy="cm" class="d-flex flex-column align-self-center">
+    <div
+      data-cy="cm"
+      id="{{ Id }}cm"
+      class="d-flex flex-column align-self-center"
+    >
       <div class="cell-coordinates invisible">{{ Id }}</div>
       <div class="cell-value" id="{{ Id }}CV"></div>
     </div>
-    <div data-cy="cr" class="d-flex flex-column">
+    <div data-cy="cr" id="{{ Id }}cr" class="d-flex flex-column">
       <div class="guess invisible" id="{{ Id }}GV7">7</div>
       <div class="guess invisible" id="{{ Id }}GV8">8</div>
       <div class="guess invisible" id="{{ Id }}GV9">9</div>
     </div>
   </div>
-  <div data-cy="r2" class="d-flex justify-content-evenly" id="{{ Id }}CB">
+  <div data-cy="r2" id="{{ Id }}r2" class="d-flex justify-content-evenly">
     <div class="guess invisible" id="{{ Id }}GV4">4</div>
     <div class="guess invisible" id="{{ Id }}GV5">5</div>
     <div class="guess invisible" id="{{ Id }}GV6">6</div>
