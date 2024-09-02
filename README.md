@@ -11,10 +11,6 @@ git commit .
 git push 
 ```
 
-# TODO:
+## Play
 
-- guesses clearing on match choice: grid 
-- don't show correct answer on bad guess
-- local storage of game info
-- Throw confetti on completing puzzle
-- change cursor (make it more clear what mode you are in): mouse, pencil, pen modes
+[Sudoku](https://why-pengo.github.io/angular-sudoku2/)
