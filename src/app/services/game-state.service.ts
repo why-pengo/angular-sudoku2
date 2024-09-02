@@ -9,8 +9,8 @@ export class GameStateService {
   checkedGrid = signal<boolean>(false);
   numberClicked = 1;
   savedGame = false;
+  colorMode = 'light';
   curHlCellId = '0';
-  // TODO: implement modes
   pencilMode = false;
   penMode = false;
   creator = new SudokuCreator({ childMatrixWidth: 3 });
@@ -33,7 +33,6 @@ export class GameStateService {
 
   loadGameState() {
     const strBuf = localStorage.getItem('savedGame');
-    let rv: Cell;
     if (strBuf !== null) {
       this.cells = JSON.parse(strBuf);
       this.savedGame = true;

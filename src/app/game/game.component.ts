@@ -23,7 +23,7 @@ export class GameComponent implements AfterViewInit, OnInit {
     // console.log('sudoku', this.gameState.sudoku);
     // console.log('cells', this.gameState.cells);
     this.utils.initializeBoard();
-    this.utils.setGridDarkBg(true);
+    this.utils.setGridBg(true);
     if (this.gameState.savedGame) {
       for (const i in this.gameState.cells) {
         const cell: Cell = this.gameState.cells[i];
@@ -72,5 +72,12 @@ export class GameComponent implements AfterViewInit, OnInit {
     if (penClicked === 'delete') {
       this.gameState.deleteGameState();
     }
+  }
+
+  onModeClick($event: MouseEvent) {
+    console.log('event', $event);
+    this.utils.changeColorMode();
+    console.log('colorMode', this.gameState.colorMode);
+    this.utils.setGridBg(true);
   }
 }
