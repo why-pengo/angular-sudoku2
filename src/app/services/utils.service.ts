@@ -52,8 +52,6 @@ export class UtilsService {
   }
 
   setGridBg(toggled: boolean) {
-    console.log('setGridBg toggled', toggled);
-    console.log('setGridBg colorMode', this.gameState.colorMode);
     const oddGrids = [
       ...this.gameState.grid1,
       ...this.gameState.grid3,
@@ -67,7 +65,6 @@ export class UtilsService {
         console.error('cellById', cellById, ' not found.');
         return;
       }
-      console.log('cellById', cellById);
       if (toggled) {
         if (this.gameState.colorMode === 'light') {
           this.renderer.removeClass(cellById, 'bg-light');
@@ -100,8 +97,6 @@ export class UtilsService {
     }
   }
 
-  // TODO: https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators
-  //  and try/catch for null ??
   toggleGuess(value: number, targetCellId: string) {
     const guess = document.querySelector(`#${targetCellId}GV${value}`);
     if (guess === null) {
@@ -263,28 +258,65 @@ export class UtilsService {
     const [row, column] = cellId.split('');
     for (const i in this.gameState.cells) {
       const cell: Cell = this.gameState.cells[i];
+      // col
       if (cell.id.endsWith(column)) {
         const filtered = cell.guesses.filter((n) => n !== guess);
         if (this.areNotEqual(cell.guesses, filtered)) {
-          console.log(
-            `Col not eq, cellId = ${cellId}, filtered = ${filtered}, cell.guesses = ${cell.guesses}, guess = ${guess}`,
-          );
           cell.guesses = filtered;
           this.updateCell(cell);
         }
       }
+      // row
       if (cell.id.startsWith(row)) {
         const filtered = cell.guesses.filter((n) => n !== guess);
         if (this.areNotEqual(cell.guesses, filtered)) {
-          console.log(
-            `Row not eq, cellId = ${cellId}, filtered = ${filtered}, cell.guesses = ${cell.guesses}, guess = ${guess}`,
-          );
           cell.guesses = filtered;
           this.updateCell(cell);
         }
       }
-      // TODO: in same grid
     }
+    // find what grid cell is in
+    const grid = this.findMatchingGrid(cellId);
+    // clear that grid of guess
+    grid.forEach((c) => {
+      const cell = this.getCellById(c);
+      const filtered = cell.guesses.filter((n) => n !== guess);
+      if (this.areNotEqual(cell.guesses, filtered)) {
+        cell.guesses = filtered;
+        this.updateCell(cell);
+      }
+    });
+  }
+
+  findMatchingGrid(cellId: string): string[] {
+    if (this.gameState.grid1.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid1;
+    }
+    if (this.gameState.grid2.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid2;
+    }
+    if (this.gameState.grid3.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid3;
+    }
+    if (this.gameState.grid4.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid4;
+    }
+    if (this.gameState.grid5.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid5;
+    }
+    if (this.gameState.grid6.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid6;
+    }
+    if (this.gameState.grid7.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid7;
+    }
+    if (this.gameState.grid8.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid8;
+    }
+    if (this.gameState.grid9.filter((c) => c === cellId).length > 0) {
+      return this.gameState.grid9;
+    }
+    return [];
   }
 
   updateCell(cell: Cell) {
@@ -318,12 +350,7 @@ export class UtilsService {
     } else {
       cell.choice = this.gameState.numberClicked;
       this.updateCell(cell);
-      console.log('cell', cell);
-      // TODO: clear guesses for this choice that are on same row/col
       this.clearGuess(cellId, this.gameState.numberClicked);
-      // what row to clear setChoice from gvs
-      // what col to clear setChoice from gvs
-      // what grid to clear setChoice from gvs
     }
   }
 

@@ -5,9 +5,7 @@
 From main branch
 
 ```bash
-npx ng build --base-href=/angular-sudoku2/
-rm docs/*
-mv dist/browser/* /docs/
+npx ng build
 git add docs/
 git commit .
 git push 
