@@ -7,7 +7,7 @@ From main branch
 ```bash
 npx ng build --base-href=/angular-sudoku2/
 rm docs/*
-mv /dist/browser/* /docs/
+mv dist/browser/* /docs/
 git add docs/
 git commit .
 git push 
@@ -16,8 +16,7 @@ git push
 # TODO:
 
 - guesses clearing on match choice: grid 
+- don't show correct answer on bad guess
 - local storage of game info
 - Throw confetti on completing puzzle
-- change cursor to match: mouse, pencil, pen
-- Dark mode
-- 
+- change cursor (make it more clear what mode you are in): mouse, pencil, pen modes

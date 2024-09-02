@@ -31,7 +31,7 @@ export class BoardComponent {
         this.utils.unHighlightRowAndColumn(this.gameState.curHlCellId);
         this.utils.unHighlightSquareByValue(this.gameState.curHlCellId);
         this.utils.unHighlightSelectedCellValues(this.gameState.curHlCellId);
-        this.utils.setGridDarkBg(true);
+        this.utils.setGridBg(true);
       }
       const cell: Cell = this.utils.getCellById(cellId);
       if (cell.choice !== 0) {

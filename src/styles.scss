@@ -4,7 +4,7 @@
 
 html {
   @media (max-width: 4000px) {
-    font-size: 1.25vw;
+    font-size: 1.28vw;
   }
 
   @media (max-width: 768px) {
@@ -17,8 +17,6 @@ html {
 }
 
 .guess {
-  //@extend .fs-6;
-  //@extend .lh-sm;
   font-size: 0.8rem;
   line-height: 1rem;
 }
@@ -102,6 +100,6 @@ html {
 
 .pen-pad {
   margin: .1rem;
-  min-width: 1rem;
-  //text-align: center;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
 }

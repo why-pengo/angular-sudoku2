@@ -48,10 +48,12 @@ export class UtilsService {
     // toggle state
     const toggled = !this.gameState.checkedGrid();
     this.gameState.checkedGrid.set(toggled);
-    this.setGridDarkBg(toggled);
+    this.setGridBg(toggled);
   }
 
-  setGridDarkBg(toggled: boolean) {
+  setGridBg(toggled: boolean) {
+    console.log('setGridBg toggled', toggled);
+    console.log('setGridBg colorMode', this.gameState.colorMode);
     const oddGrids = [
       ...this.gameState.grid1,
       ...this.gameState.grid3,
@@ -65,14 +67,37 @@ export class UtilsService {
         console.error('cellById', cellById, ' not found.');
         return;
       }
+      console.log('cellById', cellById);
       if (toggled) {
-        this.renderer.addClass(cellById, 'bg-dark');
-        this.renderer.addClass(cellById, 'text-white');
+        if (this.gameState.colorMode === 'light') {
+          this.renderer.removeClass(cellById, 'bg-light');
+          this.renderer.removeClass(cellById, 'text-black');
+          this.renderer.addClass(cellById, 'bg-dark');
+          this.renderer.addClass(cellById, 'text-white');
+        } else {
+          this.renderer.removeClass(cellById, 'bg-dark');
+          this.renderer.removeClass(cellById, 'text-white');
+          this.renderer.addClass(cellById, 'bg-light');
+          this.renderer.addClass(cellById, 'text-black');
+        }
       } else {
         this.renderer.removeClass(cellById, 'bg-dark');
         this.renderer.removeClass(cellById, 'text-white');
+        this.renderer.removeClass(cellById, 'bg-light');
+        this.renderer.removeClass(cellById, 'text-black');
       }
     });
+  }
+
+  changeColorMode() {
+    const html = document.querySelector('html') as HTMLElement;
+    if (this.gameState.colorMode === 'light') {
+      this.gameState.colorMode = 'dark';
+      this.renderer.setAttribute(html, 'data-bs-theme', 'dark');
+    } else {
+      this.gameState.colorMode = 'light';
+      this.renderer.setAttribute(html, 'data-bs-theme', 'light');
+    }
   }
 
   // TODO: https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators

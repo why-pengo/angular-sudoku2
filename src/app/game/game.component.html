@@ -18,7 +18,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number1">1</label>
+      <label class="btn btn-dark number-pad" for="number1">1</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -28,7 +28,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number2">2</label>
+      <label class="btn btn-dark number-pad" for="number2">2</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -38,7 +38,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number3">3</label>
+      <label class="btn btn-dark number-pad" for="number3">3</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -48,7 +48,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number4">4</label>
+      <label class="btn btn-dark number-pad" for="number4">4</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -58,7 +58,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number5">5</label>
+      <label class="btn btn-dark number-pad" for="number5">5</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -68,7 +68,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number6">6</label>
+      <label class="btn btn-dark number-pad" for="number6">6</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -78,7 +78,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number7">7</label>
+      <label class="btn btn-dark number-pad" for="number7">7</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -88,7 +88,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number8">8</label>
+      <label class="btn btn-dark number-pad" for="number8">8</label>
 
       <input
         (click)="onNumberClick($event)"
@@ -98,7 +98,7 @@
         name="numbers"
         type="radio"
       />
-      <label class="btn number-pad" for="number9">9</label>
+      <label class="btn btn-dark number-pad" for="number9">9</label>
       <!--    </li>-->
       <!--    <li class="list-group-item border-0" id="pen-pad-list-group">-->
       <input
@@ -111,7 +111,7 @@
         type="radio"
       />
       <label
-        class="btn pen-pad"
+        class="btn btn-dark pen-pad ms-4"
         data-bs-placement="bottom"
         data-bs-title="Mouse mode"
         data-bs-toggle="tooltip"
@@ -128,7 +128,7 @@
         type="radio"
       />
       <label
-        class="btn pen-pad"
+        class="btn btn-dark pen-pad"
         data-bs-placement="bottom"
         data-bs-title="Add guesses"
         data-bs-toggle="tooltip"
@@ -145,7 +145,7 @@
         type="radio"
       />
       <label
-        class="btn pen-pad"
+        class="btn btn-dark pen-pad"
         data-bs-placement="bottom"
         data-bs-title="Make choice"
         data-bs-toggle="tooltip"
@@ -162,7 +162,7 @@
         type="radio"
       />
       <label
-        class="btn pen-pad"
+        class="btn btn-dark pen-pad"
         data-bs-placement="bottom"
         data-bs-title="Save current game to localStorage"
         data-bs-toggle="tooltip"
@@ -179,13 +179,30 @@
         type="radio"
       />
       <label
-        class="btn pen-pad"
+        class="btn btn-dark pen-pad"
         data-bs-placement="bottom"
         data-bs-title="Clear localStorage"
         data-bs-toggle="tooltip"
         for="delete"
       >
-        <i class="bi-trash-fill text-black"></i>
+        <i class="bi-trash-fill"></i>
+      </label>
+      <input
+        (click)="onModeClick($event)"
+        autocomplete="off"
+        class="btn-check"
+        id="mode"
+        name="color-mode"
+        type="radio"
+      />
+      <label
+        class="btn btn-dark pen-pad"
+        data-bs-placement="bottom"
+        data-bs-title="Toggle Light/Dark Mode"
+        data-bs-toggle="tooltip"
+        for="mode"
+      >
+        <i class="bi-circle-half"></i>
       </label>
     </li>
   </ul>
