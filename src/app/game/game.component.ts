@@ -6,7 +6,7 @@ import { BoardComponent } from '../board/board.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Cell } from '../services/cell';
 
-declare var bootstrap: any;
+declare let bootstrap: any;
 
 @Component({
   selector: 'app-game',
