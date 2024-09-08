@@ -1,0 +1,233 @@
+[
+  { "id": "A1", "guesses": [], "choice": 3, "puzzle": 3, "solution": 3 },
+  { "id": "A2", "guesses": [], "choice": 4, "puzzle": 4, "solution": 4 },
+  { "id": "A3", "guesses": [2, 8], "choice": 0, "puzzle": 0, "solution": 8 },
+  { "id": "A4", "guesses": [1, 7, 8], "choice": 0, "puzzle": 0, "solution": 7 },
+  { "id": "A5", "guesses": [7, 8, 9], "choice": 0, "puzzle": 0, "solution": 9 },
+  { "id": "A6", "guesses": [], "choice": 5, "puzzle": 5, "solution": 5 },
+  { "id": "A7", "guesses": [1, 2, 7], "choice": 0, "puzzle": 0, "solution": 1 },
+  { "id": "A8", "guesses": [], "choice": 6, "puzzle": 6, "solution": 6 },
+  { "id": "A9", "guesses": [2, 7, 9], "choice": 0, "puzzle": 0, "solution": 2 },
+  { "id": "B1", "guesses": [], "choice": 1, "puzzle": 0, "solution": 1 },
+  { "id": "B2", "guesses": [2, 6, 7], "choice": 0, "puzzle": 0, "solution": 2 },
+  { "id": "B3", "guesses": [], "choice": 5, "puzzle": 0, "solution": 5 },
+  { "id": "B4", "guesses": [3, 4, 7], "choice": 0, "puzzle": 0, "solution": 4 },
+  {
+    "id": "B5",
+    "guesses": [3, 4, 6, 7, 9],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 6
+  },
+  {
+    "id": "B6",
+    "guesses": [2, 3, 4, 6, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 3
+  },
+  { "id": "B7", "guesses": [2, 3, 7], "choice": 0, "puzzle": 0, "solution": 7 },
+  { "id": "B8", "guesses": [], "choice": 8, "puzzle": 8, "solution": 8 },
+  {
+    "id": "B9",
+    "guesses": [2, 3, 4, 7, 9],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 9
+  },
+  { "id": "C1", "guesses": [], "choice": 9, "puzzle": 9, "solution": 9 },
+  {
+    "id": "C2",
+    "guesses": [2, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 7
+  },
+  { "id": "C3", "guesses": [2, 6, 8], "choice": 0, "puzzle": 0, "solution": 6 },
+  {
+    "id": "C4",
+    "guesses": [1, 3, 4, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 1
+  },
+  {
+    "id": "C5",
+    "guesses": [3, 4, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 8
+  },
+  {
+    "id": "C6",
+    "guesses": [2, 3, 4, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 2
+  },
+  { "id": "C7", "guesses": [], "choice": 5, "puzzle": 5, "solution": 5 },
+  {
+    "id": "C8",
+    "guesses": [1, 3, 4, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 4
+  },
+  {
+    "id": "C9",
+    "guesses": [2, 3, 4, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 3
+  },
+  { "id": "D1", "guesses": [2, 5, 8], "choice": 0, "puzzle": 0, "solution": 8 },
+  { "id": "D2", "guesses": [], "choice": 1, "puzzle": 1, "solution": 1 },
+  {
+    "id": "D3",
+    "guesses": [2, 3, 4, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 2
+  },
+  {
+    "id": "D4",
+    "guesses": [3, 4, 5, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 5
+  },
+  {
+    "id": "D5",
+    "guesses": [3, 4, 5, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 7
+  },
+  {
+    "id": "D6",
+    "guesses": [3, 4, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 6
+  },
+  {
+    "id": "D7",
+    "guesses": [2, 3, 6, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 3
+  },
+  { "id": "D8", "guesses": [], "choice": 9, "puzzle": 9, "solution": 9 },
+  {
+    "id": "D9",
+    "guesses": [2, 3, 4, 5, 6, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 4
+  },
+  { "id": "E1", "guesses": [], "choice": 6, "puzzle": 6, "solution": 6 },
+  { "id": "E2", "guesses": [], "choice": 9, "puzzle": 0, "solution": 9 },
+  { "id": "E3", "guesses": [], "choice": 7, "puzzle": 7, "solution": 7 },
+  {
+    "id": "E4",
+    "guesses": [3, 4, 5, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 3
+  },
+  {
+    "id": "E5",
+    "guesses": [3, 4, 5, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 4
+  },
+  { "id": "E6", "guesses": [3, 4, 8], "choice": 0, "puzzle": 0, "solution": 8 },
+  { "id": "E7", "guesses": [1, 2, 3], "choice": 0, "puzzle": 0, "solution": 2 },
+  {
+    "id": "E8",
+    "guesses": [1, 3, 4, 5],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 1
+  },
+  {
+    "id": "E9",
+    "guesses": [2, 3, 4, 5],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 5
+  },
+  { "id": "F1", "guesses": [5], "choice": 0, "puzzle": 0, "solution": 5 },
+  { "id": "F2", "guesses": [3], "choice": 0, "puzzle": 0, "solution": 3 },
+  { "id": "F3", "guesses": [3, 4], "choice": 0, "puzzle": 0, "solution": 4 },
+  { "id": "F4", "guesses": [], "choice": 2, "puzzle": 2, "solution": 2 },
+  { "id": "F5", "guesses": [], "choice": 1, "puzzle": 1, "solution": 1 },
+  { "id": "F6", "guesses": [], "choice": 9, "puzzle": 9, "solution": 9 },
+  { "id": "F7", "guesses": [3, 6, 7], "choice": 0, "puzzle": 0, "solution": 6 },
+  { "id": "F8", "guesses": [3, 5, 7], "choice": 0, "puzzle": 0, "solution": 7 },
+  { "id": "F9", "guesses": [], "choice": 8, "puzzle": 8, "solution": 8 },
+  { "id": "G1", "guesses": [2, 7, 8], "choice": 0, "puzzle": 0, "solution": 2 },
+  {
+    "id": "G2",
+    "guesses": [2, 3, 6, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 6
+  },
+  { "id": "G3", "guesses": [], "choice": 9, "puzzle": 0, "solution": 9 },
+  {
+    "id": "G4",
+    "guesses": [3, 5, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 8
+  },
+  {
+    "id": "G5",
+    "guesses": [3, 5, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 3
+  },
+  { "id": "G6", "guesses": [], "choice": 1, "puzzle": 1, "solution": 1 },
+  { "id": "G7", "guesses": [], "choice": 4, "puzzle": 4, "solution": 4 },
+  { "id": "G8", "guesses": [3, 5, 7], "choice": 0, "puzzle": 0, "solution": 5 },
+  {
+    "id": "G9",
+    "guesses": [3, 5, 6, 7],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 7
+  },
+  { "id": "H1", "guesses": [], "choice": 4, "puzzle": 4, "solution": 4 },
+  { "id": "H2", "guesses": [], "choice": 5, "puzzle": 5, "solution": 5 },
+  { "id": "H3", "guesses": [], "choice": 1, "puzzle": 1, "solution": 1 },
+  { "id": "H4", "guesses": [], "choice": 9, "puzzle": 0, "solution": 9 },
+  { "id": "H5", "guesses": [], "choice": 2, "puzzle": 2, "solution": 2 },
+  { "id": "H6", "guesses": [3, 7], "choice": 0, "puzzle": 0, "solution": 7 },
+  { "id": "H7", "guesses": [], "choice": 8, "puzzle": 0, "solution": 8 },
+  { "id": "H8", "guesses": [3, 7], "choice": 0, "puzzle": 0, "solution": 3 },
+  { "id": "H9", "guesses": [3, 6, 7], "choice": 0, "puzzle": 0, "solution": 6 },
+  { "id": "I1", "guesses": [7, 8], "choice": 0, "puzzle": 0, "solution": 7 },
+  { "id": "I2", "guesses": [3, 7, 8], "choice": 0, "puzzle": 0, "solution": 8 },
+  { "id": "I3", "guesses": [3, 8], "choice": 0, "puzzle": 0, "solution": 3 },
+  { "id": "I4", "guesses": [], "choice": 6, "puzzle": 6, "solution": 6 },
+  {
+    "id": "I5",
+    "guesses": [3, 4, 5, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 5
+  },
+  {
+    "id": "I6",
+    "guesses": [3, 4, 7, 8],
+    "choice": 0,
+    "puzzle": 0,
+    "solution": 4
+  },
+  { "id": "I7", "guesses": [], "choice": 9, "puzzle": 9, "solution": 9 },
+  { "id": "I8", "guesses": [], "choice": 2, "puzzle": 2, "solution": 2 },
+  { "id": "I9", "guesses": [], "choice": 1, "puzzle": 0, "solution": 1 }
+]
