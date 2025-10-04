@@ -1,6 +1,6 @@
 // Including all of Bootstrap
 // Include any default variable overrides here (though functions won't be available)
-@import "node_modules/bootstrap/scss/bootstrap";
+@use "node_modules/bootstrap/scss/bootstrap";
 
 html {
   @media (max-width: 4000px) {
@@ -39,7 +39,7 @@ html {
 }
 
 .cell-selected {
-  background-color: $green-100;
+  background-color: var(--bs-success-bg-subtle);
   color: white !important;
 }
 
@@ -57,20 +57,20 @@ html {
   from {
     text-shadow: 0 0 10px #fff,
     0 0 20px #fff,
-    0 0 30px $danger,
-    0 0 40px $danger,
-    0 0 50px $danger,
-    0 0 60px $danger,
-    0 0 70px $danger;
+    0 0 30px var(--bs-danger),
+    0 0 40px var(--bs-danger),
+    0 0 50px var(--bs-danger),
+    0 0 60px var(--bs-danger),
+    0 0 70px var(--bs-danger);
   }
   to {
     text-shadow: 0 0 20px #fff,
-    0 0 30px $primary,
-    0 0 40px $primary,
-    0 0 50px $primary,
-    0 0 60px $primary,
-    0 0 70px $primary,
-    0 0 80px $primary;
+    0 0 30px var(--bs-primary),
+    0 0 40px var(--bs-primary),
+    0 0 50px var(--bs-primary),
+    0 0 60px var(--bs-primary),
+    0 0 70px var(--bs-primary),
+    0 0 80px var(--bs-primary);
   }
 }
 

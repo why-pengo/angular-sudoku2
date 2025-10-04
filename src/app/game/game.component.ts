@@ -3,16 +3,14 @@ import { CommonModule } from '@angular/common';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
 import { BoardComponent } from '../board/board.component';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Cell } from '../services/cell';
 
 declare let bootstrap: any;
 
 @Component({
-  selector: 'app-game',
-  standalone: true,
-  imports: [CommonModule, BoardComponent, RouterLink, RouterLinkActive],
-  templateUrl: './game.component.html',
+    selector: 'app-game',
+    imports: [CommonModule, BoardComponent],
+    templateUrl: './game.component.html'
 })
 export class GameComponent implements AfterViewInit, OnInit {
   private utils = inject(UtilsService);

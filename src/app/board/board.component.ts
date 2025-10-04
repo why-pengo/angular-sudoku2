@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CellComponent } from '../cell/cell.component';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
-import { RouterOutlet } from '@angular/router';
 import { Cell } from '../services/cell';
 
 @Component({
-  selector: 'app-board',
-  standalone: true,
-  imports: [CommonModule, CellComponent, RouterOutlet],
-  templateUrl: './board.component.html',
+    selector: 'app-board',
+    imports: [CommonModule, CellComponent],
+    templateUrl: './board.component.html'
 })
 export class BoardComponent {
   rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];

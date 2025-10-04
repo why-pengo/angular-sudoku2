@@ -6,10 +6,9 @@ import { BoardComponent } from '../board/board.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-cell-demo',
-  standalone: true,
-  imports: [CommonModule, BoardComponent, RouterLink, RouterLinkActive],
-  templateUrl: './cell-demo.component.html',
+    selector: 'app-cell-demo',
+    imports: [CommonModule, BoardComponent, RouterLink, RouterLinkActive],
+    templateUrl: './cell-demo.component.html'
 })
 export class CellDemoComponent implements AfterViewInit {
   private utils = inject(UtilsService);
