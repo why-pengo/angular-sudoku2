@@ -1,12 +1,15 @@
 <div class="d-flex game-screen">
   <div id="board">
-    <div *ngFor="let r of rows" class="game-row" id="R{{ r }}">
-      <app-cell
-        (click)="onCellClick($event)"
-        *ngFor="let i of rowsCount"
-        Id="{{ r }}{{ i }}"
-      ></app-cell>
-    </div>
+    @for (r of rows; track r) {
+      <div class="game-row" id="R{{ r }}">
+        @for (i of rowsCount; track i) {
+          <app-cell
+            (click)="onCellClick($event)"
+            Id="{{ r }}{{ i }}"
+          ></app-cell>
+        }
+      </div>
+    }
   </div>
   <ng-content></ng-content>
 </div>

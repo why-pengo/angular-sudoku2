@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { CellComponent } from '../cell/cell.component';
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
@@ -7,7 +7,7 @@ import { Cell } from '../services/cell';
 
 @Component({
     selector: 'app-board',
-    imports: [CommonModule, CellComponent],
+    imports: [CellComponent],
     templateUrl: './board.component.html'
 })
 export class BoardComponent {
