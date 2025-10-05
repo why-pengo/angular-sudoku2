@@ -5,7 +5,7 @@
 From main branch
 
 ```bash
-npm build
+npm run build
 git add docs/
 git commit .
 git push 
