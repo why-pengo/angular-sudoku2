@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
 import { BoardComponent } from '../board/board.component';
@@ -7,7 +7,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'app-cell-demo',
-    imports: [CommonModule, BoardComponent, RouterLink, RouterLinkActive],
+    imports: [BoardComponent, RouterLink, RouterLinkActive],
     templateUrl: './cell-demo.component.html'
 })
 export class CellDemoComponent implements AfterViewInit {

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { UtilsService } from '../services/utils.service';
 import { GameStateService } from '../services/game-state.service';
 import { BoardComponent } from '../board/board.component';
@@ -9,7 +9,7 @@ declare let bootstrap: any;
 
 @Component({
     selector: 'app-game',
-    imports: [CommonModule, BoardComponent],
+    imports: [BoardComponent],
     templateUrl: './game.component.html'
 })
 export class GameComponent implements AfterViewInit, OnInit {
