@@ -5,7 +5,7 @@
 From main branch
 
 ```bash
-npx ng build
+npm build
 git add docs/
 git commit .
 git push 

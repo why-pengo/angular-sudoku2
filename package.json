@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/angular-sudoku2/ && rm --interactive=never docs/* && mv dist/browser/* docs/.",
+    "build": "ng build --base-href=/angular-sudoku2/ && rm -f docs/* && mv dist/browser/* docs/.",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
