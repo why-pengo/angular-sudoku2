@@ -8,7 +8,7 @@ import { Cell } from '../services/cell';
 @Component({
     selector: 'app-board',
     imports: [CellComponent],
-    templateUrl: './board.component.html'
+    templateUrl: './board.component.html',
 })
 export class BoardComponent {
   rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
